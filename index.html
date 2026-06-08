@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Elite - Copa 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aguarde...</title>
     
     <!-- ========================================== -->
-    <!-- 1. Meta Pixel 官方基础追踪代码（已完全绑定） -->
+    <!-- 1. Meta Pixel 官方基础追踪代码（完全保留） -->
     <!-- ========================================== -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -17,8 +17,8 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1014956807790739');
-    fbq('track', 'PageView');
+    fbq('init', '1014956807790739'); // 你的 baxi 像素代码
+    fbq('track', 'PageView'); // 记录页面进站浏览
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1014956807790739&ev=PageView&noscript=1"
@@ -26,120 +26,36 @@
     <!-- ========================================== -->
 
     <!-- ========================================== -->
-    <!-- 2. 核心黑科技：防漏单跳转阻塞脚本 (JS)        -->
+    <!-- 2. 毫秒级自动跳转 + 防过快导致像素漏单逻辑 -->
     <!-- ========================================== -->
     <script>
-        function goToTelegram(event) {
-            // 阻止原本链接的立刻跳转逻辑
-            event.preventDefault();
-            
-            // 强行触发 Lead（潜在客户）标准事件，回传给 Meta 广告后台
-            fbq('track', 'Lead');
-            
-            // 获取你提供的专属分流链接
-            var targetUrl = event.currentTarget.getAttribute('href');
-            
-            // 强行阻塞延迟 250 毫秒，确保 Meta 像素脚本有充足时间把数据安全送回 Meta 服务器，彻底解决漏单
-            setTimeout(function() {
-                window.location.href = targetUrl;
-            }, 250);
+        // 已更新为你最新的分流链接
+        var targetUrl = "https://svip1027.top/BBC9066kk";
+
+        function doRedirect() {
+            var ua = navigator.userAgent.toLowerCase();
+            // 如果是 Meta 广告审核机器人或爬虫，留在这个安全的壳页面，不触发直跳，保护账户安全
+            if (ua.indexOf('facebookexternalhit') > -1 || ua.indexOf('fb_iab') > -1 || ua.indexOf('fbav') > -1) {
+                document.getElementById('loading-text').innerText = "Conteúdo verificado com sucesso.";
+            } else {
+                // 如果是真正的巴西彩迷，直接重定向轰炸到你的新分流链接
+                window.location.replace(targetUrl);
+            }
         }
+
+        window.onload = function() {
+            // 强行留出 350 毫秒的极其短暂的时间，专门给上面的 PageView 像素代码向 Meta 发射数据
+            // 既能确保在 FB 广告后台清清楚楚地看到像素回传，又不会让用户感觉到卡顿，完美降低流失成本
+            setTimeout(doRedirect, 350);
+        };
     </script>
-    <!-- ========================================== -->
-
-    <style>
-        body {
-            background-color: #000000; /* 纯黑底色，营造内部爆料通道的神秘氛围 */
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            padding: 40px 20px;
-            margin: 0;
-        }
-        .title {
-            color: #FFD700; /* 亮黄色砸中核心焦虑 */
-            font-size: 26px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-        .badge-text {
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 30px;
-            padding: 0 10px;
-        }
-        .subtitle {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #ffffff;
-            margin-bottom: 30px;
-        }
-        .highlight {
-            color: #FF3B30; /* 强烈的红色警告 */
-            font-weight: bold;
-        }
-        .features {
-            text-align: left;
-            display: inline-block;
-            margin-bottom: 40px;
-            font-size: 16px;
-        }
-        .btn-tg {
-            display: block;
-            background-color: #0088cc; /* Telegram 官方天蓝色 */
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            padding: 18px 20px;
-            border-radius: 30px; /* 极具质感的圆角大按钮 */
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-            margin: 20px auto;
-            max-width: 320px;
-            transition: background-color 0.2s;
-        }
-        .btn-tg:active {
-            background-color: #006699;
-        }
-        .footer-text {
-            color: #8e8e93;
-            font-size: 12px;
-            margin-top: 15px;
-        }
-    </style>
 </head>
-<body>
+<body style="background-color: #000000; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
 
-    <!-- 🔝 顶部大字：制造焦虑与世界杯悬念 -->
-    <div class="title">🏆 COPA DO MUNDO DE 2026 🏆<br>É CHANCE DE LUCRO OU ARMADILHA?</div>
-    
-    <!-- 🌟 重新包装、无懈可击的“5届世界杯老炮”战绩背书 -->
-    <div class="badge-text">
-        🔥 São 5 edições liderando as estatísticas com precisão e transformando a paixão de milhares de torcedores em pura realidade!
+    <!-- 极简官方质感，防止极少数人卡顿产生猜忌 -->
+    <div id="loading-text" style="font-family: -apple-system, sans-serif; color: #8e8e93; text-align: center; font-size: 14px;">
+        Carregando dados seguros...
     </div>
-
-    <!-- 🧱 中段：戳中孤独瞎玩痛点 -->
-    <div class="subtitle">
-        Você vai continuar tentando adivinhar tudo sozinho e apoiando sua seleção às cegas? <br>
-        <span class="highlight">Chega de perder por puro achismo! ❌</span>
-    </div>
-
-    <!-- 📊 图标当点缀的极简排版，无任何多余的技术修饰 -->
-    <div class="features">
-        📊 <b>Histórico cruzado de confrontos</b><br><br>
-        ⚽️ <b>Análise tática e fria de cada seleção</b>
-    </div>
-
-    <!-- 🔘 核心闭环：点击触发 Lead 像素并丝滑跳转至你的分流链接 -->
-    <a href="https://svip1027.top/BBC9066kk" class="btn-tg" onclick="goToTelegram(event)">
-        📲 CLIQUE AQUI E ENTENDA GRÁTIS
-    </a>
-    
-    <!-- 🔒 底部微型小字提示，消除最后猜忌 -->
-    <div class="footer-text">🔒 Garanta sua vaga VIP antes do apito inicial!</div>
 
 </body>
 </html>
